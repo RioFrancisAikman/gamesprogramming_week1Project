@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    public int coins;
+    public int coinsCollected;
     
 
     // Start is called before the first frame update
@@ -26,10 +26,10 @@ public class Coins : MonoBehaviour
         if(collider.gameObject.tag == "Coin")
         {
             Debug.Log("Coin collected");
-            coins = coins + 1;
-            Col.gameObject.Set.Active(false);
+            coinsCollected = coinsCollected + 1;
+            collider.gameObject.SetActive(false);
 
-            collider.gameObject.GetComponent<Coins>().coins += 1;
+            collider.gameObject.GetComponent<Coins>().coinsCollected += 1;
             Destroy(gameObject, 0.60f);
         }
     }
