@@ -23,14 +23,15 @@ public class Coins : MonoBehaviour
     {
         Debug.Log("A collision has happened");
 
-        if(collider.gameObject.tag == "Coin")
+        if(collider.gameObject.tag == "Player")
         {
             Debug.Log("Coin collected");
             coinsCollected = coinsCollected + 1;
-            collider.gameObject.SetActive(false);
+            collider.gameObject.SetActive(true);
 
-            collider.gameObject.GetComponent<Coins>().coinsCollected += 1;
-            Destroy(gameObject, 0.60f);
+            Destroy(gameObject, 0.30f);
         }
     }
+
+
 }
