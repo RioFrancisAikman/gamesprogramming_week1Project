@@ -9,6 +9,8 @@ public class CounterCubeScript : MonoBehaviour
 
     Renderer r;
 
+    public int coinValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class CounterCubeScript : MonoBehaviour
             Debug.Log("player has entered the counter cube");
 
 
-            
+            thePlayerScript = other.gameObject;
 
         }
     }
