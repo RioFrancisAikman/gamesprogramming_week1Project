@@ -45,8 +45,6 @@ public class PlayerCubeScript : MonoBehaviour
         }
     }
 
-    public void SetIncreaseCoins(int numberOfCoins)
-    {
-        coins += Mathf.Clamp(numberOfCoins, 1, 9);
-    }
+   
+   
 }

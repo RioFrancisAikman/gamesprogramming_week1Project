@@ -39,7 +39,7 @@ public class CounterCubeScript : MonoBehaviour
             Debug.Log("player has entered the counter cube");
 
 
-            thePlayerScript = other.gameObject;
+            
 
         }
     }
