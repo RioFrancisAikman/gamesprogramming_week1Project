@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
     public GameObject coin;
+
+    public int gameLevel;
 
     // Start is called before the first frame update
     void Start()

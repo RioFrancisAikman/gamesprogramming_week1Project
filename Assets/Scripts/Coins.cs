@@ -30,6 +30,9 @@ public class Coins : MonoBehaviour
             collider.gameObject.SetActive(true);
 
             Destroy(gameObject, 0.5f);
+
+            //added coin to player
+            other.gameObject.GetComponent<Hero>().CollectedCoin(1);
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Hero : MonoBehaviour
     private float speed;
     public bool tutorialComplete;
     public int playerLevel;
+
+    public UnityEngine.Text coinUIText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,16 +49,9 @@ public class Hero : MonoBehaviour
         //all three of these add 1 coin
 
         //using the return function to test if something is true
-        if (CollectedCoin(1) == 2)
-        {
-            //Player is now level 2
-            Debug.Log("Level 2 wooo");
-        }
-
-        //using the return function to assign a value
-        playerLevel = CollectedCoin(1);
 
 
+        coinsUIText.text = coinsCollected.ToString();
 
         //coinsCollected++;
         //coinsCollected = coinsCollected + 1;
@@ -128,23 +125,15 @@ public class Hero : MonoBehaviour
 
     }
 
-    public int CollectedCoin(int numberOfCoinsCollectedInThisAction)
+    public void CollectedCoin(int numberOfCoinsCollectedInThisAction)
     {
         coinsCollected += numberOfCoinsCollectedInThisAction;
-        if (coinsCollected == 15)
+        if (coinsCollected == 5)
         {
             //player has collected enough coins to level up
             playerLevel += 1;
         }
 
-        if (playerLevel == 2)
-        {
-            return 2;
-        }
-        else
-        {
-            return 0;
-        }
     }
 
 
