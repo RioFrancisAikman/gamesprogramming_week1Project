@@ -29,7 +29,7 @@ public class Coins : MonoBehaviour
             coinsCollected = coinsCollected + 1;
             collider.gameObject.SetActive(true);
 
-            Destroy(gameObject, 0.30f);
+            Destroy(gameObject, 0.5f);
         }
     }
 
