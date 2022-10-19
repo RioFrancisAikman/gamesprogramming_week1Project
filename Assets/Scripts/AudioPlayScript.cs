@@ -18,9 +18,9 @@ public class AudioPlayScript : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(other.tag == "Player")
+        if(collider.tag == "Player")
         {
             //if I need to stop audio playing
             myAudio.Stop();

@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class UIManagerScript : MonoBehaviour
 {
     public Text coins, level;
-    public PlayerCubeScript myPlayer;
-    public GameManager my GM;
+    public Hero myPlayer;
+    public GameManager myGM;
+
 
 
 
@@ -20,9 +21,11 @@ public class UIManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coins.text = "Coins: " + myPlayer.coinsCollected.ToString();
+        // Grab coing from the player, and put it in ui
+        coins.text = "Gems: " + myPlayer.coinsCollected.ToString();
 
 
-        level.text = "level " + myGM.gameLevel.ToString();
+        //grab level from Game Manager and put it in the ui
+        level.text = "Level " + myGM.gameLevel.ToString();
     }
 }

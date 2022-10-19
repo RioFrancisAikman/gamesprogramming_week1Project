@@ -9,8 +9,10 @@ public class Hero : MonoBehaviour
     private float speed;
     public bool tutorialComplete;
     public int playerLevel;
+    public Transform spawnPoint;
 
-    public UnityEngine.Text coinUIText;
+    public GameObject myObjectToSpawn;
+    //public Text coinUIText;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +52,10 @@ public class Hero : MonoBehaviour
 
         //using the return function to test if something is true
 
-
-        coinsUIText.text = coinsCollected.ToString();
+        if (Input.GetButtonDown("Jump"))
+        {
+            Instantiate(myObjectToSpawn, spawnPoint.position, Quaternion.identity);
+        }
 
         //coinsCollected++;
         //coinsCollected = coinsCollected + 1;
@@ -149,7 +153,10 @@ public class Hero : MonoBehaviour
         }
 
     }
-
+    private void OnCollisionExit(Collision collision)
+    {
+        //Debug.Log("collision has ended with " + collision.gameObject.name);
+    }
 }
 
 

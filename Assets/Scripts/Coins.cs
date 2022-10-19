@@ -16,7 +16,7 @@ public class Coins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, 100 * Time.deltaTime, 0);
     }
 
    private void OnTriggerEnter(Collider collider)
@@ -32,9 +32,13 @@ public class Coins : MonoBehaviour
             Destroy(gameObject, 0.5f);
 
             //added coin to player
-            other.gameObject.GetComponent<Hero>().CollectedCoin(1);
+            collider.gameObject.GetComponent<Hero>().CollectedCoin(1);
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Stay still");
+    }
 
 }
